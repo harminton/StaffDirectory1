@@ -1,0 +1,64 @@
+﻿@model StaffDirectory.Models.TimeTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TimeTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TimeTableID" />
+            <div class="form-group">
+                <label asp-for="Staffid" class="control-label"></label>
+                <select asp-for="Staffid" class="form-control" asp-items="ViewBag.Staffid"></select>
+                <span asp-validation-for="Staffid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Studentid" class="control-label"></label>
+                <select asp-for="Studentid" class="form-control" asp-items="ViewBag.Studentid"></select>
+                <span asp-validation-for="Studentid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstPeriod" class="control-label"></label>
+                <input asp-for="FirstPeriod" class="form-control" />
+                <span asp-validation-for="FirstPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondPeriod" class="control-label"></label>
+                <input asp-for="SecondPeriod" class="form-control" />
+                <span asp-validation-for="SecondPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThirdPeriod" class="control-label"></label>
+                <input asp-for="ThirdPeriod" class="form-control" />
+                <span asp-validation-for="ThirdPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FourthPeriod" class="control-label"></label>
+                <input asp-for="FourthPeriod" class="form-control" />
+                <span asp-validation-for="FourthPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FifthPeriod" class="control-label"></label>
+                <input asp-for="FifthPeriod" class="form-control" />
+                <span asp-validation-for="FifthPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
