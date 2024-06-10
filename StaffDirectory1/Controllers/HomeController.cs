@@ -24,6 +24,9 @@ namespace StaffDirectory1.Controllers
         string mailPassword = "Your mail password";
         string toEmail;
         string fileToAttach;
+        string Getfilename;
+
+
         public IActionResult Index()
         {
             return View();
@@ -45,7 +48,7 @@ namespace StaffDirectory1.Controllers
             message.IsBodyHtml = true;
 
             //Attachment
-            message.Attachments.Add(new Attachment(fileToAttach.OpenRead(), fileToAttach.FileName));
+            message.Attachments.Add(new Attachment(fileToAttach.OpenReadStrseam(), fileToAttach.FileName));
             //Server details
 
             //Credentials
