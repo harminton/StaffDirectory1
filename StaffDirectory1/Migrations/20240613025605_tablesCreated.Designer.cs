@@ -12,8 +12,8 @@ using StaffDirectory1.Areas.Identity.Data;
 namespace StaffDirectory1.Migrations
 {
     [DbContext(typeof(StaffContext))]
-    [Migration("20240606022741_CustomeIdentity")]
-    partial class CustomeIdentity
+    [Migration("20240613025605_tablesCreated")]
+    partial class tablesCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -260,7 +260,7 @@ namespace StaffDirectory1.Migrations
                     b.Property<string>("FirstmidName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("FirstdName");
+                        .HasColumnName("FirstName");
 
                     b.Property<string>("HomeRoom")
                         .IsRequired()
@@ -268,7 +268,8 @@ namespace StaffDirectory1.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LastName");
 
                     b.Property<string>("StaffStatuse")
                         .IsRequired()

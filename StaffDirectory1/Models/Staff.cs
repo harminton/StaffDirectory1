@@ -9,11 +9,16 @@ namespace StaffDirectory.Models
     {
         public int StaffID { get; set; }
 
-        [Column("FirstdName")]
+
+
+        [Column("FirstName")]
         [Display(Name = "First Name")]
         public string FirstmidName { get; set; }
+        [Column("LastName")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string StaffStatuse { get; set; }
+        [Display (Name ="Home Room Teacher Code")]
         public string TeacherCode { get; set; }
         [Display(Name = "Home Room Number")]
         public string HomeRoom { get; set; }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 using StaffDirectory.Models;
 using StaffDirectory1.Areas.Identity.Data;
 
@@ -19,13 +20,19 @@ namespace StaffDirectory1.Controllers
             _context = context;
         }
 
+       
         // GET: Staffs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-              return _context.Staff != null ? 
-                          View(await _context.Staff.ToListAsync()) :
-                          Problem("Entity set 'StaffContext.Staff'  is null.");
+           return _context.Staff != null ?
+                        View(await _context.Staff.ToListAsync()) :
+                        Problem("Entity set 'StaffContext.Staff'  is null.");
+
+
         }
+   
+
+
 
         // GET: Staffs/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -150,14 +157,19 @@ namespace StaffDirectory1.Controllers
             {
                 _context.Staff.Remove(staff);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StaffExists(int id)
         {
-          return (_context.Staff?.Any(e => e.StaffID == id)).GetValueOrDefault();
+            return (_context.Staff?.Any(e => e.StaffID == id)).GetValueOrDefault();
         }
+
+    
+      
+     
+    
     }
 }

@@ -258,7 +258,7 @@ namespace StaffDirectory1.Migrations
                     b.Property<string>("FirstmidName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("FirstdName");
+                        .HasColumnName("FirstName");
 
                     b.Property<string>("HomeRoom")
                         .IsRequired()
@@ -266,7 +266,8 @@ namespace StaffDirectory1.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LastName");
 
                     b.Property<string>("StaffStatuse")
                         .IsRequired()
