@@ -21,15 +21,15 @@ style {
 
 body {
     contain-intrinsic-block-size: auto;
-    margin: 0;
+    margin: auto;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 60px;
     background-image: url('images/treescreenshot 2024-04-08 115453.png');
     width: 100%;
     height: 400px;
-
-    max-height: 400px;
-    background-repeat: no-repeat;
+    overflow:auto;
+    max-height: 750px;
+    background-repeat: repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
@@ -63,13 +63,14 @@ img {
 
 
 .footer {
-    position:fixed;
+    position: page;
     background-color: black;
     padding: 5px;
     text-decoration-color: #00ff21;
 }
 
 article {
+    max-width: fit-content;
     background-position-x: center;
     background-position-y: center;
 }
