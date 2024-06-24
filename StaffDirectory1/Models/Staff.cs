@@ -17,7 +17,8 @@ namespace StaffDirectory.Models
         [Column("LastName")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        public string StaffStatuse { get; set; }
+        [Display (Name ="Status")]
+        public string StaffStatus { get; set; }
         [Display (Name ="Home Room Teacher Code")]
         public string TeacherCode { get; set; }
         [Display(Name = "Home Room Number")]

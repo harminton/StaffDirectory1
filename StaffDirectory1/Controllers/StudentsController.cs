@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -24,24 +23,35 @@ namespace StaffDirectory1.Controllers
         // GET: Students
         public async Task<IActionResult> Index(string sortorder, string searchString)
         {
-           // ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
-          //  ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
-           // ViewData["CurrentFilter"] = searchString;
-            //var Student = from s in _context.Students
-             //             select s;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+            var Student = from s in _context.Students
+                          select s;
 
-           // switch (sortorder)
+            switch (sortorder)
             {
-           //     case "name_desc":
-            //        Student = Student.OrderByDescending(s => s.LastName);
-             //       break;
-            //    case "date_desc":
-             //       Student = Student.OrderByDescending(s => s.Enrollment);
-             
-                return _context.Students != null ?
+                case "name_desc":
+                    Student = Student.OrderByDescending(s => s.FirstName);
+                    Student = Student.OrderByDescending(s => s.LastName);
+
+                    break;
+                case "Date":
+                    Student = Student.OrderByDescending(s => s.Enrollment);
+                    break;
+                case "date_desc":
+                    Student = Student.OrderByDescending(s => s.Enrollment);
+                    break;
+                default:
+                    Student = Student.OrderByDescending(s => s.FirstName);
+                    Student = Student.OrderByDescending(s => s.LastName);
+                    break;
+
+              
+            }
+            return _context.Students != null ?
                             View(await _context.Students.ToListAsync()) :
                             Problem("Entity set 'StaffContext.Students'  is null.");
-            }
         }
 
         // GET: Students/Details/5
