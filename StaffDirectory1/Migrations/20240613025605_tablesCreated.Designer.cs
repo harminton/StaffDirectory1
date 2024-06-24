@@ -271,7 +271,7 @@ namespace StaffDirectory1.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("LastName");
 
-                    b.Property<string>("StaffStatuse")
+                    b.Property<string>("StaffStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

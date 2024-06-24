@@ -89,7 +89,7 @@ namespace StaffDirectory1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StaffID,FirstName,LastName,StaffStatuse,TeacherCode,HomeRoom")] Staff staff)
+        public async Task<IActionResult> Create([Bind("StaffID,FirstName,LastName,StaffStatus,TeacherCode,HomeRoom")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +121,7 @@ namespace StaffDirectory1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StaffID,FirstName,LastName,StaffStatuse,TeacherCode,HomeRoom")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("StaffID,FirstName,LastName,StaffStatus,TeacherCode,HomeRoom")] Staff staff)
         {
             if (id != staff.StaffID)
             {
