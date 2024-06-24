@@ -13,7 +13,7 @@ namespace StaffDirectory.Models
 
         [Column("FirstName")]
         [Display(Name = "First Name")]
-        public string FirstmidName { get; set; }
+        public string FirstName { get; set; }
         [Column("LastName")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }

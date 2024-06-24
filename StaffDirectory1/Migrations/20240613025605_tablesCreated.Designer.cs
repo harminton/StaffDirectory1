@@ -257,7 +257,7 @@ namespace StaffDirectory1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StaffID"), 1L, 1);
 
-                    b.Property<string>("FirstmidName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("FirstName");
@@ -300,7 +300,7 @@ namespace StaffDirectory1.Migrations
                     b.Property<DateTime>("Enrollment")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstmidName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)")

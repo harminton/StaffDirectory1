@@ -222,8 +222,13 @@
   vertical-align: top !important;
 }
 
-.align-middle {
-  vertical-align: middle !important;
+.align-
+
+
+
+
+dle {
+  vertical-align: dle !important;
 }
 
 .align-bottom {
@@ -411,15 +416,15 @@
   left: 100% !important;
 }
 
-.translate-middle {
+.translate-dle {
   transform: translate(50%, -50%) !important;
 }
 
-.translate-middle-x {
+.translate-dle-x {
   transform: translateX(50%) !important;
 }
 
-.translate-middle-y {
+.translate-dle-y {
   transform: translateY(-50%) !important;
 }
 
