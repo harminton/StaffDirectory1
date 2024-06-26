@@ -71,7 +71,7 @@ namespace StaffDirectory1.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StaffStatuse = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StaffStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TeacherCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HomeRoom = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

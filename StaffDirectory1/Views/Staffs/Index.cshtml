@@ -9,17 +9,26 @@
 <p>
     <a asp-action="Create">Add New Staff</a>
 </p>
+<form asp-action="Index" method="get">
+    <div class="form-action no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" />
+            <a asp-action="Index">Back to Full list</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstmidName)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StaffStatuse)
+                @Html.DisplayNameFor(model => model.StaffStatus)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TeacherCode)
@@ -34,13 +43,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstmidName)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StaffStatuse)
+                @Html.DisplayFor(modelItem => item.StaffStatus)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TeacherCode)

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -27,23 +26,28 @@ namespace StaffDirectory1.Controllers
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
             ViewData["CurrentFilter"] = searchString;
-            var Staff = from s in _context.Staff
+            var Student = from s in _context.Students
                           select s;
 
             switch (sortorder)
             {
                 case "name_desc":
-                    Staff = Staff.OrderByDescending(s => s.FirstName);
-                    Staff = Staff.OrderByDescending(s => s.LastName);
+                    Student = Student.OrderByDescending(s => s.FirstName);
+                    Student = Student.OrderByDescending(s => s.LastName);
+
                     break;
-               case "date_desc":
-                    Staff = Staff.OrderByDescending(s => s.StaffStatuse);
+                case "Date":
+                    Student = Student.OrderByDescending(s => s.Enrollment);
+                    break;
+                case "date_desc":
+                    Student = Student.OrderByDescending(s => s.Enrollment);
                     break;
                 default:
-                    Staff = Staff.OrderByDescending(s => s.FirstName);
-                    Staff = Staff.OrderByDescending(s => s.LastName);
+                    Student = Student.OrderByDescending(s => s.FirstName);
+                    Student = Student.OrderByDescending(s => s.LastName);
                     break;
 
+              
             }
             return _context.Students != null ?
                             View(await _context.Students.ToListAsync()) :
