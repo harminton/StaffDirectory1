@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StaffDirectory1.Areas.Identity.Data;
-using StaffDirectory.Models;
+using StaffDirectory1.Models;
 
 namespace StaffDirectory1.Areas.Identity.Data;
 

@@ -22,19 +22,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.FirstName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.LastName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StaffStatus)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.StaffStatus)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TeacherCode)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.TeacherCode)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HomeRoom)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.HomeRoom)</a>
             </th>
             <th></th>
         </tr>

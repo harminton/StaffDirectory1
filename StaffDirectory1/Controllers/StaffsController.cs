@@ -22,7 +22,7 @@ namespace StaffDirectory1.Controllers
             _context = context;
         }
 
-       
+
         // GET: Staffs
         public async Task<IActionResult> Index(string sortorder, string searchString)
         {
@@ -30,7 +30,13 @@ namespace StaffDirectory1.Controllers
             ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
             ViewData["CurrentFilter"] = searchString;
             var Staff = from s in _context.Staff
-            select s;
+                        select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Staff = Staff.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstName.Contains(searchString));
+            }
+
 
             switch (sortorder)
             {
@@ -50,13 +56,13 @@ namespace StaffDirectory1.Controllers
                     Staff = Staff.OrderByDescending(s => s.LastName);
                     break;
             }
-                    return _context.Staff != null ?
-                        View(await _context.Staff.ToListAsync()) :
-                        Problem("Entity set 'StaffContext.Staff'  is null.");
+            return _context.Staff != null ?
+                View(await _context.Staff.ToListAsync()) :
+                Problem("Entity set 'StaffContext.Staff'  is null.");
 
 
         }
-   
+
 
 
 
@@ -89,7 +95,7 @@ namespace StaffDirectory1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StaffID,FirstName,LastName,StaffStatus,TeacherCode,HomeRoom")] Staff staff)
+        public async Task<IActionResult> Create([Bind("StaffID,FirstName,LastName,StaffStatuse,TeacherCode,HomeRoom")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +127,7 @@ namespace StaffDirectory1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StaffID,FirstName,LastName,StaffStatus,TeacherCode,HomeRoom")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("StaffID,FirstName,LastName,StaffStatuse,TeacherCode,HomeRoom")] Staff staff)
         {
             if (id != staff.StaffID)
             {
@@ -193,9 +199,9 @@ namespace StaffDirectory1.Controllers
             return (_context.Staff?.Any(e => e.StaffID == id)).GetValueOrDefault();
         }
 
-    
-      
-     
-    
+
+
+
+
     }
 }
