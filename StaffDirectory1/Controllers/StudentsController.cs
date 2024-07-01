@@ -21,14 +21,14 @@ namespace StaffDirectory1.Controllers
         }
 
         // GET: Students
-        public async Task<IActionResult> Index(string sortorder, string searchString, string CurrentFilter, int Pagenumber)
+        public async Task<IActionResult> Index(string sortorder, string searchString, string CurrentFilter, int pageNumber)
         {
             ViewData["CurrentSort"] = sortorder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
             if (searchString != null)
             {
-                Pagenumber = 1;
+                pageNumber = 1;
             }
             else
             {
@@ -65,8 +65,11 @@ namespace StaffDirectory1.Controllers
             }
             int pageSize = 3;
             return _context.Students != null ?
-                            View(await _context.Students.ToListAsync()):
-                            Problem("Entity set 'StaffContext.Students'  is null.");
+                        View(await _context.Students.ToListAsync()):
+                          Problem("Entity set 'StaffContext.Students'  is null.");
+
+           // int pageSize = 3;
+   // return View(await PaginatedList<Student>.CreateAsync(Student.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         
         // GET: Students/Details/5

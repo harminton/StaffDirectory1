@@ -34,4 +34,5 @@ public class StaffContext : IdentityDbContext<StaffUser>
     public DbSet<StaffDirectory.Models.DepartmentStaff>? DepartmentStaff { get; set; }
 
     public DbSet<StaffDirectory.Models.PersonalInformation>? PersonalInformation { get; set; }
+
 }
