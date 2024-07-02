@@ -68,8 +68,8 @@ namespace StaffDirectory1.Controllers
                         View(await _context.Students.ToListAsync()):
                           Problem("Entity set 'StaffContext.Students'  is null.");
 
-           // int pageSize = 3;
-   // return View(await PaginatedList<Student>.CreateAsync(Student.AsNoTracking(), pageNumber ?? 1, pageSize));
+          //  int pageSize = 3;
+         // return View(await PageInatedList<Students>.CreateAsync(Student.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         
         // GET: Students/Details/5
