@@ -35,33 +35,31 @@ namespace StaffDirectory1.Controllers
                 searchString = CurrentFilter;
             }
             ViewData["CurrentFilter"] = searchString;
-            var Student = from s in _context.Students
+            var Students = from s in _context.Students
                           select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                Student = Student.Where(s => s.LastName.Contains(searchString)
+                Students = Students.Where(s => s.LastName.Contains(searchString)
                                        || s.FirstName.Contains(searchString));
             }
 
             switch (sortorder)
             {
                 case "name_desc":
-                    Student = Student.OrderByDescending(s => s.FirstName);
-                    Student = Student.OrderByDescending(s => s.LastName);
+                    Students = Students.OrderByDescending(s => s.FirstName);
+                    Students = Students.OrderByDescending(s => s.LastName);
 
                     break;
                 case "Date":
-                    Student = Student.OrderByDescending(s => s.Enrollment);
+                    Students = Students.OrderByDescending(s => s.Enrollment);
                     break;
                 case "date_desc":
-                    Student = Student.OrderByDescending(s => s.Enrollment);
+                    Students = Students.OrderByDescending(s => s.Enrollment);
                     break;
                 default:
-                    Student = Student.OrderByDescending(s => s.FirstName);
-                    Student = Student.OrderByDescending(s => s.LastName);
-                    break;
-
-              
+                    Students = Students.OrderByDescending(s => s.FirstName);
+                    Students = Students.OrderByDescending(s => s.LastName);
+                    break;            
             }
             int pageSize = 3;
             return _context.Students != null ?

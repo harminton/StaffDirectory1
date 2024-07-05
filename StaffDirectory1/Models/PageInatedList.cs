@@ -10,6 +10,11 @@ namespace StaffDirectory.Models
     {
         public int PageIndex { get; private set; }
         public int TotalPages { get; private set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string AcNumber { get; set; }
+        public string HomeRoom { get; set; }
+        public string Enrollment { get; set; }
 
         public PageInatedList(List<T> items, int count, int pageIndex, int pageSize)
         {
@@ -28,6 +33,8 @@ namespace StaffDirectory.Models
             var count = await source.CountAsync();
             var items = await source.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToListAsync();
             return new PageInatedList<T>(items, count, pageIndex, pageSize);
-        }
+        }  
+        
     }
+    
 }

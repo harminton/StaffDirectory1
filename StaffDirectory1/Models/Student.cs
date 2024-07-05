@@ -13,6 +13,7 @@ namespace StaffDirectory.Models
         [Column("FirstName")]
         [Required(ErrorMessage = "Please Enter Student First Name"), MaxLength(25)]
         [Display(Name = "First Name")]
+
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Please Enter Student Last Name"), MaxLength(25)]
@@ -33,6 +34,7 @@ namespace StaffDirectory.Models
 
 
         ICollection<Students> Student { get; set; }
+        
 
     }
 }
