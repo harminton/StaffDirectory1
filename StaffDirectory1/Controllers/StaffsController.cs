@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -13,6 +14,7 @@ using StaffDirectory1.Areas.Identity.Data;
 
 namespace StaffDirectory1.Controllers
 {
+    
     public class StaffsController : Controller
     {
         private readonly StaffContext _context;

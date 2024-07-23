@@ -11,7 +11,10 @@ namespace StaffDirectory.Models
         //It well also show and ErrorMessage saying that "Please Enter First Name" if this field is not filled, and another saying in the FirstName field case, that "Name can not be more than 25 characters long" when exceeding the stirng limit which is 25.
         //The (Column) allows the name of the tables on the database to be displayed as I choose which in First field case is “FirstName”.
         //The (Display Name) data annotation will changes the display name in the model metadata.In the first field case being "First Name".
-        //The [DataType(DataType.EmailAddress)]This DataType is accessed by the field templates to modify how the data field is processed.
+        //The (DataType(DataType.PhoneNumber)Applies the DataTypeAttribute attribute to the Phone data field by specifying the PhoneNumber enumerated value in the associated metadata class. This indicates to the Text.ascx field template that the email address display is customized
+        //The (DataType(DataType.EmailAddress) Applies the DataTypeAttribute attribute to the EmailAddress data field by specifying the EmailAddress enumerated value in the associated metadata class. This indicates to the Text.ascx field template that the email address display is customized.
+        //The (RegularExpression) annotation validates wather the value of an associated input control matches that of specifide pattern by a regular expression.
+        //This annotation also has a ErrorMesage that says email is not valide in case anything other then these regular expresison are inputed in this field.
 
         [Key]
         public int InformationID { get; set; }
@@ -42,6 +45,8 @@ namespace StaffDirectory.Models
 
         public string HomeAddress { get; set; }
 
+
+        
         public Staff Staff { get; set; }
         public Students Student { get; set; }
 
