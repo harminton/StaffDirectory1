@@ -39,8 +39,10 @@ namespace StaffDirectory.Models
         
         public DateTime Enrollment { get; set; }
 
+        //The following code (ICollection<PersonalInformation> Information {get; set; } is telling sql server that this class is going to be a Foreign key for the PersonalInformation class.
 
-        ICollection<Students> Student { get; set; }
+        ICollection<PersonalInformation> Information { get; set; }
+
         
 
     }
