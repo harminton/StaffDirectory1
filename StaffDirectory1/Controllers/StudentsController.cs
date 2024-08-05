@@ -23,7 +23,7 @@ namespace StaffDirectory1.Controllers
         }
 
         // GET: Students
-        public async Task<IActionResult> Index(string sortorder, string searchString, string CurrentFilter, int pageNumber)
+        public async Task<IActionResult> Index(string sortorder, string searchString, string CurrentFilter, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortorder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
@@ -32,6 +32,7 @@ namespace StaffDirectory1.Controllers
             {
                 pageNumber = 1;
             }
+
             else
             {
                 searchString = CurrentFilter;
@@ -63,13 +64,13 @@ namespace StaffDirectory1.Controllers
                     Students = Students.OrderByDescending(s => s.LastName);
                     break;            
             }
-            int pageSize = 3;
-            return _context.Students != null ?
-                        View(await _context.Students.ToListAsync()):
-                          Problem("Entity set 'StaffContext.Students'  is null.");
+            
+           // return _context.Students != null ?
+                 //       View(await _context.Students.ToListAsync()):
+                  //        Problem("Entity set 'StaffContext.Students'  is null.");
 
-          //  int pageSize = 3;
-         // return View(await PageInatedList<Students>.CreateAsync(Student.AsNoTracking(), pageNumber ?? 1, pageSize));
+            int pageSize = 17;
+          return View(await PageInatedList<Students>.CreateAsync(Students.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         
         // GET: Students/Details/5

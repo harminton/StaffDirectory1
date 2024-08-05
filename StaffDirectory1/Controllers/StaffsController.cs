@@ -26,43 +26,49 @@ namespace StaffDirectory1.Controllers
 
 
         // GET: Staffs
-        public async Task<IActionResult> Index(string sortorder, string searchString)
+        public async Task<IActionResult> Index(string sortorder, string searchString, string CurrentFilter, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortorder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortorder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortorder == "Date" ? "date_desc" : "Date";
-            ViewData["CurrentFilter"] = searchString;
-            var Staff = from s in _context.Staff
-                        select s;
-            if (!String.IsNullOrEmpty(searchString))
+            if (searchString != null)
             {
-                Staff = Staff.Where(s => s.LastName.Contains(searchString)
-                                       || s.FirstName.Contains(searchString));
+                pageNumber = 1;
             }
 
+            else
+            {
+                searchString = CurrentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+            var staff = from s in _context.Staff
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staff = staff.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstName.Contains(searchString));
+            }
 
             switch (sortorder)
             {
                 case "name_desc":
-                    Staff = Staff.OrderByDescending(s => s.FirstName);
-                    Staff = Staff.OrderByDescending(s => s.LastName);
+                    staff = staff.OrderByDescending(s => s.FirstName);
+                    staff = staff.OrderByDescending(s => s.LastName);
 
                     break;
-                case "Date":
-                    Staff = Staff.OrderByDescending(s => s.StaffStatus);
-                    break;
-                case "date_desc":
-                    Staff = Staff.OrderByDescending(s => s.StaffStatus);
-                    break;
+               
                 default:
-                    Staff = Staff.OrderByDescending(s => s.FirstName);
-                    Staff = Staff.OrderByDescending(s => s.LastName);
+                    staff = staff.OrderByDescending(s => s.FirstName);
+                    staff = staff.OrderByDescending(s => s.LastName);
                     break;
             }
-            return _context.Staff != null ?
-                View(await _context.Staff.ToListAsync()) :
-                Problem("Entity set 'StaffContext.Staff'  is null.");
 
+            // return _context.Students != null ?
+            //       View(await _context.Students.ToListAsync()):
+            //        Problem("Entity set 'StaffContext.Students'  is null.");
 
+            int pageSize = 3;
+            return View(await PageInatedList<Staff>.CreateAsync(staff.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
 
