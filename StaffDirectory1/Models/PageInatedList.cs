@@ -15,6 +15,9 @@ namespace StaffDirectory.Models
         public string AcNumber { get; set; }
         public string HomeRoom { get; set; }
         public string Enrollment { get; set; }
+        public string StaffStatus { get; set; }
+        public string TeacherCode { get; set; }
+
 
         public PageInatedList(List<T> items, int count, int pageIndex, int pageSize)
         {

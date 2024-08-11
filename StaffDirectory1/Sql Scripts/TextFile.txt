@@ -1,0 +1,124 @@
+﻿
+//Student Dummy Data//
+1	Amie 	Greene	2457	A8	9/08/2024 12:00:00 am
+2	Jonathan 	Hilton	3228	A8	9/08/2024 12:00:00 am
+3	Kaiden 	Graves	2903	B3	9/08/2024 12:00:00 am
+4	Arron	Callahan	3855	C5	9/08/2024 12:00:00 am
+5	Christian	Mcdaniel	5246	D6	9/08/2024 12:00:00 am
+6	Darcie 	Wells	3551	E1	9/08/2024 12:00:00 am
+7	Lena 	Powers	2208	A8	9/08/2024 12:00:00 am
+8	Arun	Woods	1110	F01	9/08/2024 12:00:00 am
+9	Douglas 	Myers	2780	F01	9/08/2024 12:00:00 am
+10	Yasir 	Beard	4805	A8	9/08/2024 12:00:00 am
+11	Stephanie 	Li	3047	A7	9/08/2024 12:00:00 am
+12	Yasmine	Pham	3232	A2	9/08/2024 12:00:00 am
+13	Alessia	Henry	3665	A5	9/08/2024 12:00:00 am
+14	Bartosz 	Strong	4199	A9	9/08/2024 12:00:00 am
+15	Michaela 	Whitaker	4372	A2	9/08/2024 12:00:00 am
+16	Janet 	Hunt	1248	A8	9/08/2024 12:00:00 am
+17	Alexia	Deleon	3803	A3	9/08/2024 12:00:00 am
+18	Harriett 	Yates	5364	A4	9/08/2024 12:00:00 am
+19	Alys	Kramer	3780	A37	9/08/2024 12:00:00 am
+20	Robyn 	Hood	4588	A45	9/08/2024 12:00:00 am
+21	Jazmine	Barry	2710	A27	9/08/2024 12:00:00 am
+22	Jared 	Goodman	3272	A32	9/08/2024 12:00:00 am
+23	Carlo	Ford	4516	A16	9/08/2024 12:00:00 am
+24	Zayn 	Gamble	3937	A37	9/08/2024 12:00:00 am
+25	Diane	Barrett	3295	A32	9/08/2024 12:00:00 am
+26	Kobi	Stanley	2714	A14	9/08/2024 12:00:00 am
+NULL	NULL	NULL	NULL	NULL	NULL
+
+
+//Student Dymmy Data Script//
+SET IDENTITY_INSERT [dbo].[Students] ON
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (1, N'Amie ', N'Greene', N'2457', N'A8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (2, N'Jonathan ', N'Hilton', N'3228', N'A8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (3, N'Kaiden ', N'Graves', N'2903', N'B3', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (4, N'Arron', N'Callahan', N'3855', N'C5', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (5, N'Christian', N'Mcdaniel', N'5246', N'D6', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (6, N'Darcie ', N'Wells', N'3551', N'E1', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (7, N'Lena ', N'Powers', N'2208', N'A8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (8, N'Arun', N'Woods', N'1110', N'F01', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (9, N'Douglas ', N'Myers', N'2780', N'F01', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (10, N'Yasir ', N'Beard', N'4805', N'A8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (11, N'Stephanie ', N'Li', N'3047', N'A7', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (12, N'Yasmine', N'Pham', N'3232', N'A2', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (13, N'Alessia', N'Henry', N'3665', N'A5', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (14, N'Bartosz ', N'Strong', N'4199', N'A9', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (15, N'Michaela ', N'Whitaker', N'4372', N'A2', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (16, N'Janet ', N'Hunt', N'1248', N'A8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (17, N'Alexia', N'Deleon', N'3803', N'A3', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (18, N'Harriett ', N'Yates', N'5364', N'A4', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (19, N'Alys', N'Kramer', N'3780', N'A37', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (20, N'Robyn ', N'Hood', N'4588', N'A45', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (21, N'Jazmine', N'Barry', N'2710', N'A27', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (22, N'Jared ', N'Goodman', N'3272', N'A32', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (23, N'Carlo', N'Ford', N'4516', N'A16', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (24, N'Zayn ', N'Gamble', N'3937', N'A37', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (25, N'Diane', N'Barrett', N'3295', N'A32', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (26, N'Kobi', N'Stanley', N'2714', N'A14', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (27, N'Jasmine', N'Hess', N'2634', N'A14', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (28, N'Lexi', N'Stafford', N'1234', N'B8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (29, N'Ellie-May', N'Warren', N'7434', N'B8', N'2024-08-09 00:00:00')
+INSERT INTO [dbo].[Students] ([StudentID], [FirstName], [LastName], [AcNumber], [HomeRoom], [Enrollment]) VALUES (30, N'Santiago', N'Lindsey', N'7457', N'B8', N'2024-08-09 00:00:00')
+SET IDENTITY_INSERT [dbo].[Students] OFF
+
+//Staff Dummy Data//
+1	Amie 	Greene	Teacher	AGE	9/08/2012 12:00:00 am
+2	Jonathan 	Hilton	Teacher	JNT	9/08/2012 12:00:00 am
+3	Kaiden 	Graves	Teacher	KNG	9/08/2012 12:00:00 am
+4	Arron	Callahan	Teacher	ARC	9/08/2012 12:00:00 am
+5	Christian	Mcdaniel	Teacher	CHM	9/08/2012 12:00:00 am
+6	Darcie 	Wells	Teacher	DIW	9/08/2012 12:00:00 am
+7	Lena 	Powers	Teacher	LAP	9/08/2012 12:00:00 am
+8	Arun	Woods	Teacher	AUW	9/08/2012 12:00:00 am
+9	Douglas 	Myers	Teacher	DGM	9/08/2012 12:00:00 am
+10	Yasir 	Beard	Teacher	YRB	9/08/2012 12:00:00 am
+11	Stephanie 	Li	Teacher	SIL	9/08/2012 12:00:00 am
+12	Yasmine	Pham	Teacher	YMP	9/08/2012 12:00:00 am
+13	Alessia	Henry	Teacher	ASE	9/08/2012 12:00:00 am
+14	Bartosz 	Strong	Teacher	BZS	9/08/2012 12:00:00 am
+15	Michaela 	Whitaker	Teacher	MLW	9/08/2012 12:00:00 am
+16	Janet 	Hunt	Teacher	JTH	9/08/2012 12:00:00 am
+17	Alexia	Deleon	Teacher	AXD	9/08/2012 12:00:00 am
+18	Harriett 	Yates	Teacher	HTY	9/08/2012 12:00:00 am
+19	Alys	Kramer	Teacher	ASK	9/08/2012 12:00:00 am
+20	Robyn 	Hood	Teacher	RYH	9/08/2012 12:00:00 am
+21	Jazmine	Barry	Teacher	JZG	9/08/2012 12:00:00 am
+22	Jared 	Goodman	Teacher	JDG	9/08/2012 12:00:00 am
+23	Carlo	Ford	Teacher	COF	9/08/2012 12:00:00 am
+24	Zayn 	Gamble	Teacher	ZYA	9/08/2012 12:00:00 am
+25	Diane	Barrett	Teacher	DEB	9/08/2012 12:00:00 am
+26	Kobi	Stanley	Teacher	KIS	9/08/2012 12:00:00 am
+NULL	NULL	NULL	NULL	NULL	NULL
+
+
+//Staff Dummy Data Script//
+SET IDENTITY_INSERT [dbo].[Staff] ON
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (1, N'Amie ', N'Greene', N'Teacher', N'AGE', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (2, N'Jonathan ', N'Hilton', N'Teacher', N'JNT', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (3, N'Kaiden ', N'Graves', N'Teacher', N'KNG', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (4, N'Arron', N'Callahan', N'Teacher', N'ARC', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (5, N'Christian', N'Mcdaniel', N'Teacher', N'CHM', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (6, N'Darcie ', N'Wells', N'Teacher', N'DIW', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (7, N'Lena ', N'Powers', N'Teacher', N'LAP', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (8, N'Arun', N'Woods', N'Teacher', N'AUW', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (9, N'Douglas ', N'Myers', N'Teacher', N'DGM', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (10, N'Yasir ', N'Beard', N'Teacher', N'YRB', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (11, N'Stephanie ', N'Li', N'Teacher', N'SIL', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (12, N'Yasmine', N'Pham', N'Teacher', N'YMP', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (13, N'Alessia', N'Henry', N'Teacher', N'ASE', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (14, N'Bartosz ', N'Strong', N'Teacher', N'BZS', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (15, N'Michaela ', N'Whitaker', N'Teacher', N'MLW', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (16, N'Janet ', N'Hunt', N'Teacher', N'JTH', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (17, N'Alexia', N'Deleon', N'Teacher', N'AXD', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (18, N'Harriett ', N'Yates', N'Teacher', N'HTY', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (19, N'Alys', N'Kramer', N'Teacher', N'ASK', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (20, N'Robyn ', N'Hood', N'Teacher', N'RYH', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (21, N'Jazmine', N'Barry', N'Teacher', N'JZG', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (22, N'Jared ', N'Goodman', N'Teacher', N'JDG', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (23, N'Carlo', N'Ford', N'Teacher', N'COF', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (24, N'Zayn ', N'Gamble', N'Teacher', N'ZYA', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (25, N'Diane', N'Barrett', N'Teacher', N'DEB', N'9/08/2012 12:00:00 am')
+INSERT INTO [dbo].[Staff] ([StaffID], [FirstName], [LastName], [StaffStatus], [TeacherCode], [HomeRoom]) VALUES (26, N'Kobi', N'Stanley', N'Teacher', N'KIS', N'9/08/2012 12:00:00 am')
+SET IDENTITY_INSERT [dbo].[Staff] OFF
