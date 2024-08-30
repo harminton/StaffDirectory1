@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StaffDirectory1.Models;
 using System.Diagnostics;
 using System.Net.Mail;
@@ -6,6 +7,7 @@ using System.Reflection.Emit;
 
 namespace StaffDirectory1.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

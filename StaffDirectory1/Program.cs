@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StaffDirectory1.Areas.Identity.Data;
+using StaffDirectory1.Models;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("StaffContextConnection") ?? throw new InvalidOperationException("Connection string 'StaffContextConnection' not found.");
 
@@ -9,7 +11,7 @@ builder.Services.AddDbContext<StaffContext>(options =>
 
 builder.Services.AddDefaultIdentity<StaffUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<StaffContext>();
-
+    
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -22,6 +24,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
