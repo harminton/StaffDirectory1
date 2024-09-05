@@ -37,7 +37,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
+    //app.UseMigrationsEndPoint();
 }
 
 else
@@ -62,34 +62,34 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-using (var scope = app.Services.CreateScope())
-        {
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var roles = new[] { "Admin", "Staff", "Student" };
-}
-foreach (var role in roles)
-{
-    if(!await roleManager.RoleExistsAsyne(role))
-    await RoleManager.CreateAsynce(new IdentityRole(role));
-}
-using (var scope = app.Services.CreateScope())
-{
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<StaffUser>>();
+//using (var scope = app.Services.CreateScope())
+//        {
+//    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+//    var roles = new[] { "Admin", "Staff", "Student" };
+//}
+//foreach (var role in roles)
+//{
+//    if (!await roleManager.RoleExistsAsyne(role))
+//        await RoleManager.CreateAsynce(new IdentityRole(role));
+//}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<StaffUser>>();
 
-    string Aemail = "admin@StaffDirectory.com";
-    string Apassword = "Admin123,";
+//    string Aemail = "admin@StaffDirectory.com";
+//    string Apassword = "Admin123,";
 
-    string Email = "employee@StaffDirectory.com";
-    string Epassword = "Emplyee123,";
+//    string Email = "employee@StaffDirectory.com";
+//    string Epassword = "Emplyee123,";
     
-    if (await userManager.FindByEmailAsync(Aemail) == null)
-    {
-        var user = new StaffUser();
-        user.UserName = "Aemail";
-        user.Email = "Aemil";
-        user.FirstName = "Admin";
-        user.LastName = "Account";
-    }
-}
+//    if (await userManager.FindByEmailAsync(Aemail) == null)
+//    {
+//        var user = new StaffUser();
+//        user.UserName = "Aemail";
+//        user.Email = "Aemil";
+//        user.FirstName = "Admin";
+//        user.LastName = "Account";
+//    }
+//}
 
 app.Run();
