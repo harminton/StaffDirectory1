@@ -29,6 +29,8 @@ namespace StaffDirectory.Models
         [Display (Name ="Home Room Teacher Code")]
         public string TeacherCode { get; set; }
         [Display(Name = "Home Room Number")]
+        
+        //This field is appearing as a date and time field on website.
         public string HomeRoom { get; set; }
 
         //The following code (ICollection<PersonalInformation> Information {get; set; } is telling sql server that this class is going to be a Foreign key for the PersonalInformation class.

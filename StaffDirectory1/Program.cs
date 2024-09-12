@@ -15,7 +15,7 @@ builder.Services.AddDbContext<StaffContext>(options =>
 
 
 
-builder.Services.AddDefaultIdentity<StaffUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<StaffUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<StaffContext>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<StaffContext>().AddDefaultTokenProviders();
