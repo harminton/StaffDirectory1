@@ -491,6 +491,7 @@ namespace StaffDirectory1.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                     
 
                     b.HasOne("StaffDirectory1.Areas.Identity.Data.StaffUser", null)
                         .WithMany()

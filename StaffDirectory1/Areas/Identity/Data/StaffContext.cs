@@ -15,22 +15,58 @@ public class StaffContext : IdentityDbContext<StaffUser>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        //base.OnModelCreating(builder);
-        //builder.Entity<StaffUser<string>>(entity =>
-        //{
-        //    entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-        //});
-        
-
-        //builder.Entity<IdentityRole>().HasData()
+        base.OnModelCreating(builder);
+        builder.Entity<StaffUser<string>>(entity =>
+        {
+            entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+        });
 
 
+        builder.Entity<IdentityRole>().HasData(
+            new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
 
 
-        // Customize the ASP.NET Identity model and override the defaults if needed.
-        // For example, you can rename the ASP.NET Identity table names and more.
-        // Add your customizations after calling base.OnModelCreating(builder);
+            new IdentityRole { Id = "2", Name = "Staff", NormalizedName = "ADMIN" }
+
+            );
+
+        var hasher = new PasswordHasher<IdentityUser>();
+        builder.Entity<IdentityUser>().HasData(
+
+            new IdentityUser
+            {
+                Id = "1",
+                UserName = "admin@example.com",
+                NormalizedUserName = "ADMIN@EXAMPLE.COM",
+                Email = "admin@example.com",
+                NormalizedEmail = "ADMIN@EXAMPLE.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "admin123")
+            },
+            new IdentityUser
+            {
+                Id = "2",
+                UserName = "staff@example.com",
+                NormalizedUserName = "STAFF@EXAMPLE.COM",
+                Email = "staff@example.com",
+                NormalizedEmail = "STAFF@EXAMPLE.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "staff123")
+            }
+
+        );
+
+        builder.Entity<IdentityUserRole<string>>().HasData(
+            new IdentityUserRole<string> { RoleId = "1", UserId = "1" },
+            new IdentityUserRole<string> { RoleId = "2", UserId = "2" }
+
+
+            );
     }
+        //Customize the ASP.NET Identity model and override the defaults if needed.
+        //For example, you can rename the ASP.NET Identity table names and more.
+        //Add your customizations after calling base.OnModelCreating(builder);
+
 
     public DbSet<StaffDirectory.Models.Staff>? Staff { get; set; }
 
