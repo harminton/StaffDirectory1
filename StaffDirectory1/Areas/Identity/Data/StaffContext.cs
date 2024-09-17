@@ -36,10 +36,10 @@ public class StaffContext : IdentityDbContext<StaffUser>
             new IdentityUser
             {
                 Id = "1",
-                UserName = "admin@example.com",
-                NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                Email = "admin@example.com",
-                NormalizedEmail = "ADMIN@EXAMPLE.COM",
+                UserName = "harminton",
+                NormalizedUserName = "HARMINTON",
+                Email = "ac150559@avcol.school.nz",
+                NormalizedEmail = "AC150559@AVCOL.SCHOOL.NZ",
                 EmailConfirmed = true,
                 PasswordHash = hasher.HashPassword(null, "admin123")
             },
@@ -81,4 +81,10 @@ public class StaffContext : IdentityDbContext<StaffUser>
     public DbSet<StaffDirectory.Models.DepartmentStaff>? DepartmentStaff { get; set; }
 
     public DbSet<StaffDirectory.Models.PersonalInformation>? PersonalInformation { get; set; }
+}
+
+internal class StaffUser<T>
+{
+    public string LoginProvider { get; internal set; }
+    public string ProviderKey { get; internal set; }
 }

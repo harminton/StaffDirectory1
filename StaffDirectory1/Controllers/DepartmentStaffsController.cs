@@ -11,7 +11,7 @@ using StaffDirectory1.Areas.Identity.Data;
 
 namespace StaffDirectory1.Controllers
 {
-    [Authorize]
+    
     public class DepartmentStaffsController : Controller
     {
         private readonly StaffContext _context;

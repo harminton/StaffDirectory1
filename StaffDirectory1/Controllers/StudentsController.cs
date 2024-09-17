@@ -12,7 +12,7 @@ using StaffDirectory1.Areas.Identity.Data;
 
 namespace StaffDirectory1.Controllers
 {
-    [Authorize]
+    
     public class StudentsController : Controller
     {
         private readonly StaffContext _context;
