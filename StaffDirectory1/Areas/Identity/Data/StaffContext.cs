@@ -26,34 +26,50 @@ public class StaffContext : IdentityDbContext<StaffUser>
             new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
 
 
-            new IdentityRole { Id = "2", Name = "Staff", NormalizedName = "ADMIN" }
+            new IdentityRole { Id = "2", Name = "Staff", NormalizedName = "STAFF" },
 
+
+
+            new IdentityRole { Id ="3", Name = "Student", NormalizedName = "STUDENT"}
             );
 
-        var hasher = new PasswordHasher<IdentityUser>();
-        builder.Entity<IdentityUser>().HasData(
+        var hasher = new PasswordHasher<StaffUser>();
+        builder.Entity<StaffUser>().HasData(
 
-            new IdentityUser
+            new StaffUser
             {
                 Id = "1",
-                UserName = "harminton",
+                FirstName = "harminton",
                 NormalizedUserName = "HARMINTON",
+                LastName = "Vasquez",
+                
                 Email = "ac150559@avcol.school.nz",
                 NormalizedEmail = "AC150559@AVCOL.SCHOOL.NZ",
                 EmailConfirmed = true,
                 PasswordHash = hasher.HashPassword(null, "admin123")
             },
-            new IdentityUser
+            new StaffUser
             {
                 Id = "2",
-                UserName = "staff@example.com",
+                FirstName = "staff",
                 NormalizedUserName = "STAFF@EXAMPLE.COM",
+                LastName = "Member",
                 Email = "staff@example.com",
                 NormalizedEmail = "STAFF@EXAMPLE.COM",
                 EmailConfirmed = true,
                 PasswordHash = hasher.HashPassword(null, "staff123")
+            },
+            new StaffUser
+            {
+                Id = "3",
+                FirstName = "Student",
+                NormalizedUserName = "STUDENT@EXAMPLE.COM",
+                LastName = "Member",
+                Email = "Student@example.com",
+                NormalizedEmail = "STUDENT@EXAMPLE.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Student123")
             }
-
         );
 
         builder.Entity<IdentityUserRole<string>>().HasData(
@@ -85,6 +101,6 @@ public class StaffContext : IdentityDbContext<StaffUser>
 
 internal class StaffUser<T>
 {
-    public string LoginProvider { get; internal set; }
+    public string? LoginProvider { get; internal set; }
     public string ProviderKey { get; internal set; }
 }
