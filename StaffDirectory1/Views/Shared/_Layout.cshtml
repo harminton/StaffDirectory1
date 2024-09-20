@@ -19,7 +19,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                                                    @if (User.IsInRole("Admin"))
+                            {
                         <li class="nav-item">
+                            
                             <style>Textarea </style>
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -54,7 +57,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="PersonalInformations" asp-action="">Personal Information</a>
                          
                         </li>
-                       
+                            }
 
                     </ul>
                     

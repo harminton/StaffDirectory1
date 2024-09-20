@@ -46,7 +46,7 @@ public class StaffContext : IdentityDbContext<StaffUser>
                 Email = "ac150559@avcol.school.nz",
                 NormalizedEmail = "AC150559@AVCOL.SCHOOL.NZ",
                 EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null, "admin123")
+                PasswordHash = hasher.HashPassword(null, "Admin@123")
             },
             new StaffUser
             {
@@ -74,8 +74,8 @@ public class StaffContext : IdentityDbContext<StaffUser>
 
         builder.Entity<IdentityUserRole<string>>().HasData(
             new IdentityUserRole<string> { RoleId = "1", UserId = "1" },
-            new IdentityUserRole<string> { RoleId = "2", UserId = "2" }
-
+            new IdentityUserRole<string> { RoleId = "2", UserId = "2" },
+            new IdentityUserRole<string> { RoleId = "3", UserId = "3" }
 
             );
     }
