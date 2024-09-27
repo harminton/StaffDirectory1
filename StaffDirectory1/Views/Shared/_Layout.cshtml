@@ -19,8 +19,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                                                    @if (User.IsInRole("Admin"))
-                            {
+                                                 
                         <li class="nav-item">
                             
                             <style>Textarea </style>
@@ -33,12 +32,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Staffs" asp-action="">Staff</a>
                         </li>
-                        @if (User.IsInRole("Admin"))
-                        {
+                        
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="">Students</a>
                             </li>
-                        }
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="">Departments</a>
                         </li>
@@ -57,7 +55,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="PersonalInformations" asp-action="">Personal Information</a>
                          
                         </li>
-                            }
+                            
 
                     </ul>
                     

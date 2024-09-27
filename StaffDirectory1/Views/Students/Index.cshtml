@@ -4,6 +4,7 @@
     ViewData["Title"] = "Avondale Students";
 }
 
+
 <h1>Student</h1>
 
 <p>
@@ -68,22 +69,33 @@
 }
     </tbody>
 </table>
+
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
 }
 
+<style>
+    h5 {
+        color: white;
+    }
+</style>
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
    class="btn btn-default @prevDisabled">
-    Previous
+    <h5>Previous</h5>
 </a>
+<style>
+    h5 {
+        color: white;
+    }
+</style>
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
    class="btn btn-default @nextDisabled">
-    Next
+    <h5>Next</h5>
 </a>
